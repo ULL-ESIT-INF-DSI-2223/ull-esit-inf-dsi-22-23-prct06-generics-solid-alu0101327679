@@ -1,8 +1,8 @@
 # Informe de Practica 6
 
-# Práctica 6 - Clases e interfaces genéricas. Principios SOLID
+## Práctica 6 - Clases e interfaces genéricas. Principios SOLID
 
-# Introducción
+## Introducción
 
 Esta práctica consistirá en la elaboración de actividades con las que establecer unas bases con el conocimiento
 relacionado con clases e interfaces genericas en _TypeScript_ 
@@ -13,7 +13,7 @@ Los recursos de esta práctica estarán organizados en los sigueintes directorio
 - **test**: Este es el directorio donde se ubican los test de las actividades
 - **docs**: directorio generado por typedoc, es la ubicación de la documentacion de la práctica
 
-# Tareas previas
+## Tareas previas
 
 - Repasar las ["Markdown Basics"](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#links)
 - Tener a mano los [apuntes](https://ull-esit-inf-dsi-2223.github.io/typescript-theory/)
