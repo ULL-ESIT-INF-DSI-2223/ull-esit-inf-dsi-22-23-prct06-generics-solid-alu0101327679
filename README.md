@@ -1,17 +1,15 @@
-# Informe de Practica 5
+# Informe de Practica 6
 
-# Práctica 5 - Objetos, clases e interfaces
+# Práctica 6 - Clases e interfaces genéricas. Principios SOLID
 
 # Introducción
 
 Esta práctica consistirá en la elaboración de actividades con las que establecer unas bases con el conocimiento
-relacionado con objetos, clases e interfaces en _TypeScript_
+relacionado con clases e interfaces genericas en _TypeScript_ 
 
 Los recursos de esta práctica estarán organizados en los sigueintes directorios:
 
 - **src**: En este directorio se ubican las actividades realizadas para el cumplimiento de la práctica, en este caso son:
-  - Biblioteca Musical
-  - Conecta 4
 - **test**: Este es el directorio donde se ubican los test de las actividades
 - **docs**: directorio generado por typedoc, es la ubicación de la documentacion de la práctica
 
