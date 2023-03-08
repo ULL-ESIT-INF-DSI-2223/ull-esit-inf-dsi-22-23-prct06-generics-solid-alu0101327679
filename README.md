@@ -2,6 +2,8 @@
 
 ## Práctica 6 - Clases e interfaces genéricas. Principios SOLID
 
+[![Coverage Status](https://coveralls.io/repos/github/ULL-ESIT-INF-DSI-2223/ull-esit-inf-dsi-22-23-prct06-generics-solid-alu0101327679/badge.svg?branch=main)](https://coveralls.io/github/ULL-ESIT-INF-DSI-2223/ull-esit-inf-dsi-22-23-prct06-generics-solid-alu0101327679?branch=main)
+
 ## Introducción
 
 Esta práctica consistirá en la elaboración de actividades con las que establecer unas bases con el conocimiento
