@@ -15,6 +15,9 @@ Los recursos de esta práctica estarán organizados en los sigueintes directorio
 
 # Tareas previas
 
+- Repasar las ["Markdown Basics"](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#links)
+- Tener a mano los [apuntes](https://ull-esit-inf-dsi-2223.github.io/typescript-theory/)
+- Tener a mano el [guion de la practica](https://ull-esit-inf-dsi-2223.github.io/prct06-generics-solid)
 - Peparar el entorno virtual para que contenga:
 
   1. [TyeDoc](https://typedoc.org)
@@ -28,6 +31,3 @@ Los recursos de esta práctica estarán organizados en los sigueintes directorio
      - `npm i prompt-sync`
      - `npm i --save-dev @types/prompt-sync`
 
-- Repasar las ["Markdown Basics"](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#links)
-- Tener a mano los [apuntes](https://ull-esit-inf-dsi-2223.github.io/typescript-theory/)
-- Tener a mano el [guion de la practica](https://ull-esit-inf-dsi-2223.github.io/prct06-generics-solid)
