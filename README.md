@@ -5,7 +5,8 @@
 ## Introducción
 
 Esta práctica consistirá en la elaboración de actividades con las que establecer unas bases con el conocimiento
-relacionado con clases e interfaces genericas en _TypeScript_ 
+relacionado con clases e interfaces genericas en _TypeScript_
+
 Los recursos de esta práctica estarán organizados en los sigueintes directorios:
 
 - **src**: En este directorio se ubican las actividades realizadas para el cumplimiento de la práctica, en este caso son:
