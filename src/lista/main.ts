@@ -1,16 +1,36 @@
 
-
+/**
+ * clase lista, donde no se usa nada de Array.prototype.
+ */
 class lista<T> {
+  /**
+   * constructor de la clase lista
+   * @param list array de elementos tipo T
+   */
   constructor(private list: T[]){}
 
+  /**
+   * metodo para obtener el array de la lista
+   * @returns array de elementos tipo T
+   */
   getLista(){
     return this.list
   }
 
-  setLista(index: number, valor: T){
-    this.list[index] = valor
+  /**
+   * metodo que cambia el valor del array a uno nuevo
+   * @param valor array de tipo T
+   */
+  setLista(valor: T[]){
+    this.list = valor
   }
 
+  /**
+   * motodo para insertar una lista al fianl de otra
+   * @param lista_uno objeto de tipo lista<T>
+   * @param lista_dos objeto de tipo lista<T>
+   * @returns 
+   */
   append(lista_uno: lista<T>, lista_dos: lista<T>){
     let auxiliar: T[] = []
     let variable: number = (lista_uno.lenght() + lista_dos.lenght())
@@ -22,6 +42,10 @@ class lista<T> {
     return lista_uno
   }
 
+    /**
+     * metodo que añade una lista al final de la lista del objeto invocante
+     * @param lista_aux 
+     */
   concatenate(lista_aux: lista<T>){
     let variable = lista_aux.lenght()
     let i = 0
@@ -37,6 +61,10 @@ class lista<T> {
 
   filter(){ } // lista y predicado lógico ¿callback?
 
+  /**
+   * metodo par aobtener la longitud de  al lista
+   * @returns longitud de la lista
+   */
   lenght(){
     let i = 0
     while(this.list[i+1] != undefined){
@@ -49,6 +77,9 @@ class lista<T> {
 
   reduce(){}// no hecha
 
+  /**
+   * metodo que invierte el array de la lista
+   */
   reverse(){
     let aux: T[] = []
     let j = 0
