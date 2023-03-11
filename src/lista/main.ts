@@ -59,7 +59,12 @@ class lista<T> {
     }
   }
 
-  filter(){ } // lista y predicado lógico ¿callback?
+  /**
+   * metodo filter, hace lo mismo que filter
+   */
+  filter(myFucntion: (a: T[]) => void){ 
+    myFucntion(this.list)
+  } // lista y predicado lógico ¿callback?
 
   /**
    * metodo par aobtener la longitud de  al lista
@@ -100,11 +105,20 @@ class lista<T> {
 
 }
 
-const prueba = new lista([1,2,3])
-const prueba_dos = new lista([3,2,1])
+const prueba = new lista([1,2,3,4])
+const prueba_dos = new lista(["cabeza","señores","caramelos"])
 // console.log((prueba.lenght() + prueba_dos.lenght()))
 // console.log(prueba.append(prueba, prueba_dos))
 console.log(prueba)
+prueba.filter(element => {
+  for(let i = 0; i < prueba.lenght(); i++){
+    if(element[i] % 2){
+      console.log("impar")
+    }else{
+      console.log("par")
+    }
+  }
+})
 // prueba.reverse()
 // console.log(prueba)
 // prueba.concatenate(prueba_dos)
