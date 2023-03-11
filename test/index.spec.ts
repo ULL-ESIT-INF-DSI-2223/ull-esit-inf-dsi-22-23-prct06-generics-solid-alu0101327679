@@ -1,10 +1,6 @@
 import "mocha";
 import { expect } from "chai";
 
-
-
-
-
 // describe("index test", () => {
 //   it("add(1,4,5) == 10", () => {
 //     expect(add(1, 4)).to.be.equal(5);
