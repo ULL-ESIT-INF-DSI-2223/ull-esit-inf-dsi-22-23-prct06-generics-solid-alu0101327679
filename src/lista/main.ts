@@ -64,7 +64,7 @@ class lista<T> {
    */
   filter(myFucntion: (a: T[]) => void){ 
     myFucntion(this.list)
-  } // lista y predicado lógico ¿callback?
+  } 
 
   /**
    * metodo par aobtener la longitud de  al lista
@@ -78,8 +78,13 @@ class lista<T> {
     return i+1
   } 
 
-  map(){}// no hecha
-
+  /**
+   * 
+   * @param myFucntion 
+   */
+  map(myFucntion: (a: T[]) => void){ 
+    myFucntion(this.list)
+  } 
   reduce(){}// no hecha
 
   /**
@@ -110,15 +115,24 @@ const prueba_dos = new lista(["cabeza","señores","caramelos"])
 // console.log((prueba.lenght() + prueba_dos.lenght()))
 // console.log(prueba.append(prueba, prueba_dos))
 console.log(prueba)
-prueba.filter(element => {
+// prueba.filter(element => {
+//   for(let i = 0; i < prueba.lenght(); i++){
+//     if(element[i] % 2){
+//       console.log("impar")
+//     }else{
+//       console.log("par")
+//     }
+//   }
+// })
+// console.log(prueba)
+prueba.map(element => {
   for(let i = 0; i < prueba.lenght(); i++){
-    if(element[i] % 2){
-      console.log("impar")
-    }else{
-      console.log("par")
-    }
+    element[i] = element[i] + 2
   }
 })
+console.log(prueba)
+
+
 // prueba.reverse()
 // console.log(prueba)
 // prueba.concatenate(prueba_dos)
