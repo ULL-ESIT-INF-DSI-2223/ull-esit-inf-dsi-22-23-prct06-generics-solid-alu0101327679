@@ -155,12 +155,12 @@ export class lista<T> {
   }
 }
 
-const prueba = new lista([1, 2, 3, 4]);
-const prueba_dos = new lista(["cabeza", "señores", "caramelos"]);
+// const prueba = new lista([1, 2, 3, 4]);
+// const prueba_dos = new lista(["cabeza", "señores", "caramelos"]);
 
-console.log(prueba);
-prueba.forEach((elemento) => {
-  elemento = elemento + 2;
-  return elemento;
-});
-console.log(prueba);
+// console.log(prueba);
+// prueba.forEach((elemento) => {
+//   elemento = elemento + 2;
+//   return elemento;
+// });
+// console.log(prueba);

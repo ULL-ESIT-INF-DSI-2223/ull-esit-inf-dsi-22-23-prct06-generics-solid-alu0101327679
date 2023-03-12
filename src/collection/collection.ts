@@ -1,5 +1,7 @@
 import { Artist } from "./artist";
+import { Cancion } from "./cancion";
 import { Discografy } from "./discografy";
+import { CD } from "./cd";
 
 /**
  * clase para poder tener una collecion de artistas
@@ -10,6 +12,7 @@ export class ArtistCollection {
    * @param artistas array de objetos tipo artist
    */
   constructor(private artistas: Artist[]) {}
+  
   /**
    * funcion para añadir nuevo artista a la coleccion
    * @param newArtist objeto de tipo ARtist
@@ -17,6 +20,7 @@ export class ArtistCollection {
   addArtist(newArtist: Artist) {
     this.artistas.push(newArtist);
   }
+
   /**
    * funcionq ue devuelve la cantidad de artistas de la collecion
    * @returns variable de tipo number
@@ -24,22 +28,29 @@ export class ArtistCollection {
   getSize() {
     return this.artistas.length;
   }
+
   /**
    * funcion que busca un artista en concreto e imprime su informacion por pantalla en formato tabla
    * @param busqueda variabl de tipo string con la que buscar al artista
    * @returns true si lo encuentra, false en caso contrario
    */
-  searchArtist(busqueda: string): boolean {
-    result: Artist;
+  searchArtist(busqueda: string): boolean | Artist {
     let encontrado: boolean = false;
+    let este_elemento = new Artist("",0, new Discografy([ new CD("",0,[ new Cancion("",0,[""], false, 0)])]))
     this.artistas.forEach((element) => {
       // console.log(element.name, busqueda);
       if (element.name == busqueda) {
-        element.table();
+        // element.table();
+        este_elemento = element
         encontrado = true;
       }
     });
-    return encontrado;
+
+    if(encontrado){
+      return este_elemento
+    }else{
+      return false
+    }
   }
 
   /**
@@ -48,12 +59,11 @@ export class ArtistCollection {
    * @returns true si encuentra lo buscado, false si no lo encuentra
    */
   searchCD(busqueda: string): boolean {
-    result: Discografy;
     let encontrado: boolean = false;
     this.artistas.forEach((element) => {
       const discografia_var = element.getDiscografy();
       // console.log(discografia_var)
-      discografia_var.getDiscos().forEach((elementDos) => {
+      discografia_var.getDiscos().forEach((elementDos: CD) => {
         if (elementDos.getName() == busqueda) {
           console.table(elementDos);
           encontrado = true;
@@ -69,11 +79,10 @@ export class ArtistCollection {
    * @returns true si encuentra lo buscado, false si no lo encuentra
    */
   searchCancion(busqueda: string): boolean {
-    result: Discografy;
     let encontrado: boolean = false;
     this.artistas.forEach((element) => {
       const discografia_var = element.getDiscografy();
-      discografia_var.getDiscos().forEach((elementDos) => {
+      discografia_var.getDiscos().forEach((elementDos: CD) => {
         elementDos.getCanciones().forEach((elementTres) => {
           if (elementTres.getname() == busqueda) {
             console.table(elementTres);
@@ -91,12 +100,11 @@ export class ArtistCollection {
    * @returns numero de canciones
    */
   getNCanciones(busqueda: string): number {
-    result: Discografy;
     let counter: number = 0;
     this.artistas.forEach((element) => {
       const discografia_var = element.getDiscografy();
       // console.log(discografia_var)
-      discografia_var.getDiscos().forEach((elementDos) => {
+      discografia_var.getDiscos().forEach((elementDos: CD) => {
         if (elementDos.getName() == busqueda) {
           counter = elementDos.getCanciones().length;
         }
@@ -104,18 +112,18 @@ export class ArtistCollection {
     });
     return counter;
   }
+
   /**
    * funcion que calcula la duracion de un disco en concreto
    * @param busqueda variable de tipo string (nombre del disco a calcualar)
    * @returns
    */
   getDuracion(busqueda: string): number {
-    result: Discografy;
     let duracion: number = 0;
     this.artistas.forEach((element) => {
       const discografia_var = element.getDiscografy();
       // console.log(discografia_var)
-      discografia_var.getDiscos().forEach((elementDos) => {
+      discografia_var.getDiscos().forEach((elementDos: CD) => {
         if (elementDos.getName() == busqueda) {
           elementDos.getCanciones().forEach((elementTres) => {
             duracion += elementTres.getDuracion();
@@ -135,8 +143,7 @@ export class ArtistCollection {
     let reproducciones_totales: number = 0;
     this.artistas.forEach((element) => {
       const discografia_var = element.getDiscografy();
-      // console.log(discografia_var)
-      discografia_var.getDiscos().forEach((elementDos) => {
+      discografia_var.getDiscos().forEach((elementDos: CD) => {
         if (elementDos.getName() == busqueda) {
           elementDos.getCanciones().forEach((elementTres) => {
             reproducciones_totales += elementTres.getProduce();
@@ -146,6 +153,7 @@ export class ArtistCollection {
     });
     return reproducciones_totales;
   }
+
   /**
    * funcion que imprime la informacion del objeto en formato tabla
    */

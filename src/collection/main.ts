@@ -24,7 +24,7 @@ const grupo_de_musica = new Group(
 const myCollection = new ArtistCollection([individual, grupo_de_musica]);
 
 let variable: boolean = myCollection.searchCD("disco");
-console.log(variable);
+// console.log(variable);
 // console.log(CD_base)
 
 // console.log(myCollection.getDuracion("disco"))
