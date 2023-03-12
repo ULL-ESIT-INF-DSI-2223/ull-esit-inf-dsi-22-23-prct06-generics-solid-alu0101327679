@@ -81,7 +81,7 @@ export class ArtistCollection {
       });
     });
     if(encontrado){
-      console.log(este_elemento)
+      // console.log(este_elemento)
       return este_elemento
     }else if(encontrado_dos){
       return este_dos
