@@ -13,11 +13,8 @@ Los recursos de esta práctica estarán organizados en los sigueintes directorio
 
 - **src**: En este directorio se ubican las actividades realizadas para el cumplimiento de la práctica, en este caso son:
   - DSIflix:
-    - Texto
   - Implementación de una lista y sus operaciones:
-    - Texto
   - Ampliando la biblioteca musical:
-    - Texto
 - **test**: Este es el directorio donde se ubican los test de las actividades
 - **docs**: directorio generado por typedoc, es la ubicación de la documentacion de la práctica
 
