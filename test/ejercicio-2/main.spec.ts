@@ -1,6 +1,6 @@
 import "mocha";
 import { expect } from "chai";
-import { lista } from "../../src/lista/main";
+import { lista } from "../../src/ejercicio-2/main";
 
 const prueba = new lista([1, 2, 3, 4]);
 const prueba_2 = new lista(["hola", "paola", "rey hielo"]);

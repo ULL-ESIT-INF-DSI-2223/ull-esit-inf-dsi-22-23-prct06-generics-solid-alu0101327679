@@ -1,11 +1,11 @@
 import "mocha";
 import { expect } from "chai";
-import { Cancion } from "../../src/collection/cancion";
-import { CD } from "../../src/collection/cd";
-import { Single } from "../../src/collection/single";
-import { Discografy } from "../../src/collection/discografy";
-import { Group } from "../../src/collection/group";
-import { ArtistCollection } from "../../src/collection/collection";
+import { Cancion } from "../../src/ejercicio-3/cancion";
+import { CD } from "../../src/ejercicio-3/cd";
+import { Single } from "../../src/ejercicio-3/single";
+import { Discografy } from "../../src/ejercicio-3/discografy";
+import { Group } from "../../src/ejercicio-3/group";
+import { ArtistCollection } from "../../src/ejercicio-3/collection";
 
 
 const cancion_base = new Cancion("cacatua", 366, ["country", "rock"], true, 6);

@@ -1,13 +1,13 @@
 import "mocha";
 import { expect } from "chai";
-import { Streamable } from "../../src/DSIflix/stremeable";
-import { BasicStreamableCollection } from "../../src/DSIflix/colecctions/BasicColection";
-import { Serie } from "../../src/DSIflix/clases/serie";
-import { SeriesCollection } from "../../src/DSIflix/colecctions//SeriesCollection";
-import { Pelicula } from "../../src/DSIflix/clases/pelicula";
-import { PelisCollection } from "../../src/DSIflix/colecctions/PelisCollection";
-import { Documental } from "../../src/DSIflix/clases/Documental";
-import { DocumentalCollection } from "../../src/DSIflix/colecctions/DocumentalCollection";
+import { Streamable } from "../../src/ejercicio-1/stremeable";
+import { BasicStreamableCollection } from "../../src/ejercicio-1/colecctions/BasicColection";
+import { Serie } from "../../src/ejercicio-1/clases/serie";
+import { SeriesCollection } from "../../src/ejercicio-1/colecctions//SeriesCollection";
+import { Pelicula } from "../../src/ejercicio-1/clases/pelicula";
+import { PelisCollection } from "../../src/ejercicio-1/colecctions/PelisCollection";
+import { Documental } from "../../src/ejercicio-1/clases/Documental";
+import { DocumentalCollection } from "../../src/ejercicio-1/colecctions/DocumentalCollection";
 
 const serie_1 = new Serie("serie 1", 1999, "animacion", 45);
 const serie_2 = new Serie("serie 2", 2000, "terror", 34);
