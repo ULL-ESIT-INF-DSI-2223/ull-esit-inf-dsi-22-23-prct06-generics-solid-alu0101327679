@@ -65,4 +65,13 @@ describe("collection test", () => {
   it("calculo de la cantidad de reproducciones de un disco incorrecto", () => {
     expect(myCollection.getReproducciones("disco")).to.not.be.equal(655);
   });
+  it("add artist", () => {
+    myCollection.addArtist(grupo_de_musica)
+  });
+  it("add artist", () => {
+    expect(myCollection.getSize()).to.be.equal(3)
+  });
+  it("table correcta", () => {
+    myCollection.table()
+  });
 });

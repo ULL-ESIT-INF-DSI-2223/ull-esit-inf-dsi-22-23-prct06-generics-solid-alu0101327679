@@ -16,4 +16,7 @@ export class Group extends Artist {
   getName(): string {
     return this.groupName;
   }
+  getIntegrantes(): number {
+    return this.nIntegrantes
+  }
 }

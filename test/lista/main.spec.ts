@@ -122,4 +122,7 @@ describe("pruebas de la clase lista", () => {
     prueba_2.concatenate(new lista(["hola"]));
     expect(prueba_2).to.not.deep.equal(new lista(["hola"]));
   });
+  it("set lista", () => {
+    prueba.setLista([9,10,11,12]);
+  });
 });
