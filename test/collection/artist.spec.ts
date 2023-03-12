@@ -23,10 +23,14 @@ describe("artista test", () => {
     expect(individual.getListeners()).to.be.equal(35)
   });
   it("get generos incorrecto", () => {
-    expect(individual.getListeners()).to.be.equal(2)
+    expect(individual.getListeners()).to.not.be.equal(2)
   });
   it("set generos ", () => {
-    indivisual.setListeners(40)
+    individual.setListeners(40)
+    expect(individual.getListeners()).to.be.equal(40)
+  });
+  it("set generos ", () => {
+    individual.table()
     expect(individual.getListeners()).to.be.equal(40)
   });
 

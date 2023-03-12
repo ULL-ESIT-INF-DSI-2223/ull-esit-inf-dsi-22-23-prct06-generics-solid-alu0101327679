@@ -36,4 +36,8 @@ describe("Cancion test", () => {
   it("get generos longitud", () => {
     expect(cancion_base.getGeneres().length).to.equal(2);
   });
+  it("table ", () => {
+    cancion_base.table()
+    expect(cancion_base.getGeneres().length).to.equal(2);
+  });
 });
