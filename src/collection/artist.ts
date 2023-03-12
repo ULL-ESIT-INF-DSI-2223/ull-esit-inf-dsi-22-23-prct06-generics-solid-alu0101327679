@@ -15,6 +15,7 @@ export class Artist {
     private listeners: number,
     private discografy: Discografy
   ) {}
+
   /**
    * funcion que devuelve la cantidad de oyentes
    * @returns cantidad de oyentes
@@ -22,6 +23,7 @@ export class Artist {
   getListeners() {
     return this.listeners;
   }
+
   /**
    * funcion que actualiza la cantidad de oyentes
    * @param listeners cantidad de oyentes
@@ -29,6 +31,7 @@ export class Artist {
   setListeners(listeners: number) {
     this.listeners = listeners;
   }
+
   /**
    * devuelve el atributo de tipo Discografía del objeto Artista
    * @returns discografía del objeto artista
@@ -36,10 +39,12 @@ export class Artist {
   getDiscografy() {
     return this.discografy;
   }
+
   /**
    * funcion que imprime la informacion del objeto en formato tabla
    */
   table() {
     console.table(this);
   }
+
 }

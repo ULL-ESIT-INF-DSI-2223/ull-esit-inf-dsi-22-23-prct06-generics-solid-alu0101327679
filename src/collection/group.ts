@@ -7,7 +7,8 @@ export class Group extends Artist {
     name: string,
     listeners: number,
     discografy: Discografy,
-    private groupName: string
+    private groupName: string,
+    private nIntegrantes: number
   ) {
     super(name, listeners, discografy);
     groupName = name;

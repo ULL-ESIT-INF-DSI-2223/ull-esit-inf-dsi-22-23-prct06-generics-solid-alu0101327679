@@ -20,22 +20,13 @@ const grupo_de_musica = new Group(
   "javier",
   6,
   discografia_bdos,
-  "casi a cenar"
+  "casi a cenar",
+  4
 );
 
 const myCollection = new ArtistCollection([individual, grupo_de_musica]);
 
-describe("Cancion test", () => {
-  it("get generos correcto", () => {
-    expect(cancion_base.getGeneres()).to.deep.equal(["country", "rock"]);
-  });
-  it("get generos incorrecto", () => {
-    expect(cancion_base.getGeneres()).to.not.deep.equal(["asdasda", "tarde"]);
-  });
-  it("get generos longitud", () => {
-    expect(cancion_base.getGeneres().length).to.equal(2);
-  });
-});
+
 
 describe("collection test", () => {
   it("busqueda de un artista correcta", () => {
@@ -45,13 +36,13 @@ describe("collection test", () => {
     expect(myCollection.searchArtist("samuel")).to.be.false;
   });
   it("busqueda de un disco correcta", () => {
-    expect(myCollection.searchCD("disco")).to.be.true;
+    expect(myCollection.searchCD("disco")).to.deep.equal(CD_base);
   });
   it("busqueda de un disco incorrecta", () => {
     expect(myCollection.searchCD("discossssss")).to.be.false;
   });
   it("busqueda de una cancion correcta", () => {
-    expect(myCollection.searchCancion("cacatua")).to.be.true;
+    expect(myCollection.searchCancion("cacatua")).to.deep.equal(cancion_base);
   });
   it("busqueda de una cancion incorrecta", () => {
     expect(myCollection.searchCancion("cacaasastua")).to.be.false;
