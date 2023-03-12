@@ -6,8 +6,6 @@
 
 ## Introducción
 
-hola que está pasando
-
 Esta práctica consistirá en la elaboración de actividades con las que establecer unas bases con el conocimiento
 relacionado con clases e interfaces genericas en _TypeScript_
 
