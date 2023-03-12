@@ -97,7 +97,7 @@ const muchosDocus = new DocumentalCollection(
   "realidad"
 );
 
-describe("pruebas de coleccion de peliculas", () => {
+describe("pruebas de coleccion de documentales", () => {
   it("busqueda por genero bien", () => {
     expect(muchosDocus.searchByGenere("actualidad")).to.deep.equal([docu_2]);
   });
