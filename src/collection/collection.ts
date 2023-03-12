@@ -2,7 +2,7 @@ import { Artist } from "./artist";
 import { Cancion } from "./cancion";
 import { Discografy } from "./discografy";
 import { CD } from "./cd";
-
+import { Disco_Single } from "./disco_single";
 /**
  * clase para poder tener una collecion de artistas
  */
@@ -58,22 +58,34 @@ export class ArtistCollection {
    * @param busqueda variable de tipo string (nombre del disco)
    * @returns true si encuentra lo buscado, false si no lo encuentra
    */
-  searchCD(busqueda: string): boolean | CD {
+  searchCD(busqueda: string): boolean | CD | Disco_Single {
     let encontrado: boolean = false;
+    let encontrado_dos = false
     let este_elemento = new CD("", 0, [new Cancion("",0,[""], false, 0)])
+    let este_dos = new Disco_Single("", 0 , new Cancion("",0,[""], false, 0))
     this.artistas.forEach((element) => {
       const discografia_var = element.getDiscografy();
       // console.log(discografia_var)
-      discografia_var.getDiscos().forEach((elementDos: CD) => {
-        if (elementDos.getName() == busqueda) {
-          este_elemento = elementDos
-          encontrado = true;
+      discografia_var.getDiscos().forEach((elementDos: CD | Disco_Single) => {
+        if(elementDos instanceof CD){
+          if (elementDos.getName() == busqueda) {
+            este_elemento = elementDos
+            encontrado = true;
+          }
+        }else if(elementDos instanceof Disco_Single){
+          if(elementDos.getName() == busqueda){
+            este_dos = elementDos
+            encontrado_dos = true
+          }
         }
       });
     });
     if(encontrado){
+      console.log(este_elemento)
       return este_elemento
-    }else{
+    }else if(encontrado_dos){
+      return este_dos
+    }else {
       return false
     }
   }
@@ -88,16 +100,23 @@ export class ArtistCollection {
     let este_elemento = new Cancion("",0,[""],false, 0)
     this.artistas.forEach((element) => {
       const discografia_var = element.getDiscografy();
-      discografia_var.getDiscos().forEach((elementDos: CD) => {
-        elementDos.getCanciones().forEach((elementTres) => {
-          if (elementTres.getname() == busqueda) {
-            este_elemento = elementTres
-            encontrado = true;
-          }
-        });
+      discografia_var.getDiscos().forEach((elementDos: CD | Disco_Single) => {
+        if (elementDos instanceof Disco_Single) {
+           if(elementDos.getCanciones().getname() === busqueda){
+            este_elemento = elementDos.getCanciones()
+            encontrado = true
+           }
+        } else if (elementDos instanceof CD) {
+          elementDos.getCanciones().forEach((elementTres: Cancion) => {
+            if (elementTres.getname() == busqueda) {
+              este_elemento = elementTres
+              encontrado = true;
+            }
+          });
+        }
       });
     });
-    if(encontrado){
+    if(encontrado ){
       return este_elemento
     }else{
       return false
@@ -114,10 +133,17 @@ export class ArtistCollection {
     this.artistas.forEach((element) => {
       const discografia_var = element.getDiscografy();
       // console.log(discografia_var)
-      discografia_var.getDiscos().forEach((elementDos: CD) => {
-        if (elementDos.getName() == busqueda) {
-          counter = elementDos.getCanciones().length;
+      discografia_var.getDiscos().forEach((elementDos: CD | Disco_Single) => {
+        if(elementDos instanceof Disco_Single){
+          if (elementDos.getName() === busqueda){
+            counter =  1
+          }
+        }else if(elementDos instanceof CD){
+          if (elementDos.getName() == busqueda) {
+            counter =  elementDos.getCanciones().length;
+          }
         }
+
       });
     });
     return counter;
@@ -133,12 +159,16 @@ export class ArtistCollection {
     this.artistas.forEach((element) => {
       const discografia_var = element.getDiscografy();
       // console.log(discografia_var)
-      discografia_var.getDiscos().forEach((elementDos: CD) => {
+      discografia_var.getDiscos().forEach((elementDos: CD | Disco_Single) => {
+      if(elementDos instanceof CD){
         if (elementDos.getName() == busqueda) {
           elementDos.getCanciones().forEach((elementTres) => {
-            duracion += elementTres.getDuracion();
+          duracion += elementTres.getDuracion();
           });
         }
+      }else if(elementDos instanceof Disco_Single){
+        duracion = elementDos.getCanciones().getDuracion()
+      }
       });
     });
     return duracion;
@@ -153,12 +183,17 @@ export class ArtistCollection {
     let reproducciones_totales: number = 0;
     this.artistas.forEach((element) => {
       const discografia_var = element.getDiscografy();
-      discografia_var.getDiscos().forEach((elementDos: CD) => {
-        if (elementDos.getName() == busqueda) {
-          elementDos.getCanciones().forEach((elementTres) => {
-            reproducciones_totales += elementTres.getProduce();
-          });
+      discografia_var.getDiscos().forEach((elementDos: CD | Disco_Single) => {
+        if(elementDos instanceof CD){
+          if (elementDos.getName() == busqueda) {
+            elementDos.getCanciones().forEach((elementTres) => {
+              reproducciones_totales += elementTres.getProduce();
+            });
+          }
+        }else if( elementDos instanceof Disco_Single){
+          reproducciones_totales = elementDos.getCanciones().getProduce()
         }
+
       });
     });
     return reproducciones_totales;

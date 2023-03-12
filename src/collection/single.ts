@@ -1,5 +1,7 @@
 import { Artist } from "./artist";
 import { Discografy } from "./discografy";
+import { CD } from "./cd";
+import { Disco_Single } from "./disco_single";
 
 /**
  * clase hija de la clase artist, en este caso se usa para cuando el objeto tipo artist se refiere a un artista solista
@@ -11,7 +13,7 @@ export class Single extends Artist {
    * @param listeners cantidad de oyentes
    * @param discografy discografía del artista
    */
-  constructor(name: string, listeners: number, discografy: Discografy) {
+  constructor(name: string, listeners: number, discografy: Discografy<CD | Disco_Single>) {
     super(name, listeners, discografy);
   }
   /**

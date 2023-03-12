@@ -8,7 +8,7 @@ import { Cancion } from "./cancion";
    * constructor de la clase disco
    * @param name nombre del disco
    * @param published fecha de publicacion del disco (number)
-   * @param canciones array de canciones que forman el disco
+   * @param canciones canciones que forma el disco
    */
   constructor(
     private name: string,

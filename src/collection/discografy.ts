@@ -1,18 +1,19 @@
 import { CD } from "./cd";
+import { Disco_Single } from "./disco_single";
 /**
  * definicion de la clase discografía
  */
-export class Discografy {
+export class Discografy<T extends CD | Disco_Single> {
   /**
    * cosntructor del objeto Discografy formado por un array de objetos de tipo CD
    * @param discos array de objetos de tipo CD
    */
-  constructor(private discos: CD[]) {}
+  constructor(private discos: T[]) {}
   /**
    * funcion que añade un disco a la discografía
    * @param newDisco objeto tipo CD a añadir a la discografía
    */
-  addDisco(newDisco: CD) {
+  addDisco(newDisco: T) {
     this.discos.push(newDisco);
   }
   /**

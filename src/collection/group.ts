@@ -1,12 +1,14 @@
 import { Artist } from "./artist";
 import { Discografy } from "./discografy";
+import { CD } from "./cd";
+import { Disco_Single } from "./disco_single";
 
 export class Group extends Artist {
   // private names: string[]
   constructor(
     name: string,
     listeners: number,
-    discografy: Discografy,
+    discografy: Discografy<CD | Disco_Single>,
     private groupName: string,
     private nIntegrantes: number
   ) {

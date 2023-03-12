@@ -1,4 +1,6 @@
 import { Discografy } from "./discografy";
+import { CD } from "./cd";
+import { Disco_Single } from "./disco_single";
 /**
  * Clase para definir a el objeto artista, la cual necesita:una variable para su nombre de tipo string, una vatiable de tipo numbers
  * para la cantidad de oyentes y una variable de tipo discografía para guardar los datos sobre su carrera musical.
@@ -13,7 +15,7 @@ export class Artist {
   constructor(
     public readonly name: string,
     private listeners: number,
-    private discografy: Discografy
+    private discografy: Discografy<CD | Disco_Single>
   ) {}
 
   /**
