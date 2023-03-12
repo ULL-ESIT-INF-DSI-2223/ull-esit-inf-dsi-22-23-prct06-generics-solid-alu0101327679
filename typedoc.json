@@ -1,7 +1,7 @@
 {
   "entryPoints":  ["./src/*.ts", 
-  "./src/DSIflix/**/*.ts" ,
-  "./src/collection/**/*.ts",
-  "./src/lista/**/*.ts"], 
+  "./src/ejercicio-1/**/*.ts" ,
+  "./src/ejercicio-2/**/*.ts",
+  "./src/ejercicio-3/**/*.ts"], 
   "out": "./docs"
 }
